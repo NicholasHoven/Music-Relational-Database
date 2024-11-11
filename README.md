@@ -54,3 +54,33 @@ python3 musicdb.py
 - Liked_Songs: Logs user-favorited songs.
 - Comments: Stores user comments on songs.
 - Related_Songs: Records relationships between songs and genres.
+
+## Importing Custom Data
+
+To add your own data to the music database using HeidiSQL, follow these steps:
+
+1. **Open HeidiSQL**:
+   - Launch HeidiSQL and connect to your MariaDB server where the music database is set up.
+
+2. **Select the Database**:
+   - In the left panel, locate and select the music database created with `musicdb.sql`.
+
+3. **Navigate to the Target Table**:
+   - Choose the table you want to add data to (e.g., `Songs`, `Albums`, `Artists`, `Genres`, `Users`, etc.).
+
+4. **Import Data**:
+   - **Option 1: Manual Entry**:
+     - Right-click on the table and select “Open Table.”
+     - In the table view, click on the last row to manually enter new records, filling in each column as needed.
+
+   - **Option 2: Import from CSV**:
+     - Prepare your data in a CSV file with columns matching the structure of the table.
+     - Right-click on the table and select “Import CSV file.”
+     - In the import dialog, select your CSV file and configure the delimiter and column mappings as necessary.
+     - Click “Import” to load the data into the table.
+
+5. **Verify Data Import**:
+   - After importing, run a quick query on the table (e.g., `SELECT * FROM Songs`) to verify that the new data is accessible.
+
+6. **Using Custom Data with the Application**:
+   - Once your data is added to the tables, run the application using `python3 musicdb.py`. Your custom entries will now be available for use within the app.
